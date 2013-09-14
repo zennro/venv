@@ -1,9 +1,14 @@
 box: wercker/python
-services:
-	- wercker/redis
+# Build definition
 build:
-	steps:
-		- pip-install
-		- script:
-			name: flask tests
-			code: python app_test.py
+  # The steps that will be executed on build
+  steps:
+    # A step that executes `pip install` command
+    - pip-install
+
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: python unit test
+        code: |
+          python app_test.py
