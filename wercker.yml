@@ -1,4 +1,4 @@
-box: wercher/python
+box: wercker/python
 services:
 	- wercker/redis
 build:
